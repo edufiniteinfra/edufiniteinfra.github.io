@@ -48,3 +48,9 @@ License baseline:
 - `contact.html`
   - CDN: `https://images.pexels.com/photos/5965527/pexels-photo-5965527.jpeg?cs=srgb&dl=pexels-charlotte-may-5965527.jpg&fm=jpg`
   - Photo page: `https://www.pexels.com/photo/5965527/`
+- `student-form.html`
+  - CDN: `https://images.pexels.com/photos/5965527/pexels-photo-5965527.jpeg?cs=srgb&dl=pexels-charlotte-may-5965527.jpg&fm=jpg`
+  - Photo page: `https://www.pexels.com/photo/5965527/`
+- `institution-form.html`
+  - CDN: `https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?cs=srgb&dl=pexels-fauxels-3184418.jpg&fm=jpg`
+  - Photo page: `https://www.pexels.com/photo/3184418/`

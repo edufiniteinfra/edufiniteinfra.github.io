@@ -495,10 +495,60 @@ main {
 }
 
 .hero-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-top: 1.8rem;
+  margin-top: 2rem;
+}
+
+.hero-meta-card {
+  text-decoration: none;
+  display: block;
+  min-height: 100%;
+  position: relative;
+  cursor: pointer;
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 22px 56px rgba(8, 3, 18, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-meta-card::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -16px;
+  height: 24px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.28) 0%, rgba(124, 58, 237, 0) 72%);
+  filter: blur(10px);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.hero-meta-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(192, 132, 252, 0.42);
+  box-shadow:
+    0 30px 72px rgba(20, 8, 31, 0.34),
+    0 0 0 1px rgba(212, 170, 255, 0.08) inset;
+}
+
+.hero-meta-card-title {
+  display: block;
+  color: var(--heading);
+  font-family: "Sora", "Manrope", sans-serif;
+  font-size: 1.32rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.8rem;
+}
+
+.hero-meta-card-copy {
+  display: block;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 .pill {
@@ -514,10 +564,26 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.page-light .hero-meta-card {
+  box-shadow:
+    0 22px 56px rgba(16, 38, 58, 0.1),
+    0 0 0 1px rgba(124, 58, 237, 0.03) inset;
+}
+
+.page-light .hero-meta-card-title {
+  color: #10263a;
+}
+
+.page-light .hero-meta-card-copy,
 .page-light .pill {
-  background: rgba(124, 58, 237, 0.05);
   color: var(--paper-muted);
-  border-color: rgba(124, 58, 237, 0.1);
+}
+
+.page-light .hero-meta-card:hover {
+  border-color: rgba(124, 58, 237, 0.22);
+  box-shadow:
+    0 28px 68px rgba(68, 33, 121, 0.14),
+    0 0 0 1px rgba(124, 58, 237, 0.06) inset;
 }
 
 .hero-visual,
@@ -974,6 +1040,74 @@ td strong {
   gap: 1.2rem;
 }
 
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.route-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 19rem;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  background:
+    radial-gradient(circle at top right, rgba(168, 85, 247, 0.18), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 238, 255, 0.94));
+  border: 1px solid rgba(124, 58, 237, 0.12);
+  box-shadow: 0 20px 60px rgba(16, 38, 58, 0.08);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.route-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124, 58, 237, 0.28);
+  box-shadow: 0 24px 70px rgba(68, 33, 121, 0.12);
+}
+
+.route-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -3rem -3rem auto;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, transparent 70%);
+}
+
+.route-title {
+  color: #10263a;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+}
+
+.route-copy {
+  margin-top: 0.9rem;
+  max-width: 28rem;
+  color: var(--paper-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.route-meta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 3.1rem;
+  margin-top: 1.6rem;
+  padding: 0.75rem 1.15rem;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.12);
+  color: #24193b;
+  font-weight: 800;
+}
+
 .portal-card {
   position: relative;
   overflow: hidden;
@@ -1352,6 +1486,7 @@ details.faq-item summary::-webkit-details-marker {
   .grid-2,
   .split-grid,
   .portal-grid,
+  .route-grid,
   .footer-grid {
     grid-template-columns: 1fr;
   }
@@ -1450,7 +1585,8 @@ details.faq-item summary::-webkit-details-marker {
   .timeline,
   .card-grid,
   .feature-grid,
-  .form-grid {
+  .form-grid,
+  .hero-meta {
     grid-template-columns: 1fr;
   }
 
