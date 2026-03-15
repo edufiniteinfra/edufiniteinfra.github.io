@@ -78,11 +78,27 @@
           <h3>Tell us about your institution and the opportunity</h3>
           <form action="mailto:advisor@edufinite.in" method="post" enctype="text/plain" class="form-panel" style="margin-top:1rem;">
             <div class="form-grid">
-              <div class="form-field"><label for="inst-name">Institution name</label><input id="inst-name" name="Institution name" type="text"></div>
+              <div class="form-field"><label for="inst-name">Institution name <span class="required-mark">*</span></label><input id="inst-name" name="Institution name" type="text" required></div>
               <div class="form-field"><label for="inst-reg">Registration number</label><input id="inst-reg" name="Registration number" type="text"></div>
               <div class="form-field"><label for="inst-person">Contact person</label><input id="inst-person" name="Contact person" type="text"></div>
               <div class="form-field"><label for="inst-post">Post</label><input id="inst-post" name="Post" type="text"></div>
-              <div class="form-field"><label for="inst-email">Email ID</label><input id="inst-email" name="Email" type="email"></div>
+              <div class="form-field"><label for="inst-email">Email ID <span class="required-mark">*</span></label><input id="inst-email" name="Email" type="email" required></div>
+              <div class="form-field full">
+                <label for="inst-consultant">If consultant, then name of person</label>
+                <select id="inst-consultant" name="Consultant" data-consultant-select data-other-target="inst-consultant-other">
+                  <option value="No consultant">No consultant</option>
+                  <option value="Priyanka">Priyanka</option>
+                  <option value="Deepak">Deepak</option>
+                  <option value="Vandana">Vandana</option>
+                  <option value="Richa">Richa</option>
+                  <option value="Sanjeev">Sanjeev</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-field full is-hidden" id="inst-consultant-other" data-other-field aria-hidden="true">
+                <label for="inst-consultant-other-input">If other, please type the name</label>
+                <input id="inst-consultant-other-input" name="Consultant (Other)" type="text" disabled>
+              </div>
               <div class="form-field"><label for="inst-phone">Contact number</label><input id="inst-phone" name="Contact number" type="tel"></div>
               <div class="form-field full"><label for="inst-message">Inquiry details</label><textarea id="inst-message" name="Inquiry details" placeholder="Describe the type of partnership, exchange, visit, or collaboration you would like to explore."></textarea></div>
             </div>

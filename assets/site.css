@@ -1325,6 +1325,10 @@ details.faq-item summary::-webkit-details-marker {
   font-weight: 700;
 }
 
+.required-mark {
+  color: var(--accent-strong);
+}
+
 .form-field input,
 .form-field textarea,
 .form-field select {
@@ -1340,6 +1344,10 @@ details.faq-item summary::-webkit-details-marker {
 .form-field textarea {
   min-height: 8rem;
   resize: vertical;
+}
+
+.form-field.is-hidden {
+  display: none;
 }
 
 .form-note {

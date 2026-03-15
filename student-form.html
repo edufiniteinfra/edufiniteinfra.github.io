@@ -78,10 +78,26 @@
           <h3>Tell Edufinite where you want to go next</h3>
           <form action="mailto:advisor@edufinite.in" method="post" enctype="text/plain" class="form-panel" style="margin-top:1rem;">
             <div class="form-grid">
-              <div class="form-field"><label for="student-name">Name</label><input id="student-name" name="Name" type="text"></div>
+              <div class="form-field"><label for="student-name">Name <span class="required-mark">*</span></label><input id="student-name" name="Name" type="text" required></div>
               <div class="form-field"><label for="student-course">Applying for course</label><input id="student-course" name="Applying for course" type="text"></div>
               <div class="form-field"><label for="student-session">Session</label><input id="student-session" name="Session" type="text" placeholder="Summer, Fall, Spring"></div>
-              <div class="form-field"><label for="student-email">Email ID</label><input id="student-email" name="Email" type="email"></div>
+              <div class="form-field"><label for="student-email">Email ID <span class="required-mark">*</span></label><input id="student-email" name="Email" type="email" required></div>
+              <div class="form-field full">
+                <label for="student-consultant">If consultant, then name of person</label>
+                <select id="student-consultant" name="Consultant" data-consultant-select data-other-target="student-consultant-other">
+                  <option value="No consultant">No consultant</option>
+                  <option value="Priyanka">Priyanka</option>
+                  <option value="Deepak">Deepak</option>
+                  <option value="Vandana">Vandana</option>
+                  <option value="Richa">Richa</option>
+                  <option value="Sanjeev">Sanjeev</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-field full is-hidden" id="student-consultant-other" data-other-field aria-hidden="true">
+                <label for="student-consultant-other-input">If other, please type the name</label>
+                <input id="student-consultant-other-input" name="Consultant (Other)" type="text" disabled>
+              </div>
               <div class="form-field full"><label for="student-phone">Contact number</label><input id="student-phone" name="Contact number" type="tel"></div>
               <div class="form-field full"><label for="student-notes">Academic goals</label><textarea id="student-notes" name="Academic goals" placeholder="Tell us about your intended course, country preferences, current stage, or any constraints."></textarea></div>
             </div>
