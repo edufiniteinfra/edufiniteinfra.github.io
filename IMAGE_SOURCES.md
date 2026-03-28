@@ -54,3 +54,6 @@ License baseline:
 - `institution-form.html`
   - CDN: `https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?cs=srgb&dl=pexels-fauxels-3184418.jpg&fm=jpg`
   - Photo page: `https://www.pexels.com/photo/3184418/`
+- `thanks.html`
+  - CDN: `https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?cs=srgb&dl=pexels-fauxels-3183197.jpg&fm=jpg`
+  - Photo page: `https://www.pexels.com/photo/3183197/`

@@ -63,7 +63,7 @@
             open with the details prefilled so you can send a structured inquiry immediately.
           </p>
           <div class="info-strip">
-            <span class="info-chip"><a href="mailto:advisor@edufinite.in">advisor@edufinite.in</a></span>
+            <span class="info-chip"><a href="mailto:edufinite.consultant@gmail.com">edufinite.consultant@gmail.com</a></span>
             <span class="info-chip"><a href="tel:+919205508084">+91 9205508084</a></span>
           </div>
         </div>
@@ -76,12 +76,17 @@
         <article class="portal-card reveal">
           <div class="mini-kicker">Student registration</div>
           <h3>Tell Edufinite where you want to go next</h3>
-          <form action="mailto:advisor@edufinite.in" method="post" enctype="text/plain" class="form-panel" style="margin-top:1rem;">
+          <form action="https://formsubmit.co/edufinite.consultant@gmail.com" method="POST" class="form-panel" style="margin-top:1rem;">
+            <input type="hidden" name="_subject" value="Edufinite Student Inquiry">
+            <input type="hidden" name="_next" value="https://edufinite.net/thanks.html?form=student">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_url" value="https://edufinite.net/student-form.html">
+            <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off">
             <div class="form-grid">
-              <div class="form-field"><label for="student-name">Name <span class="required-mark">*</span></label><input id="student-name" name="Name" type="text" required></div>
+              <div class="form-field"><label for="student-name">Name <span class="required-mark">*</span></label><input id="student-name" name="name" type="text" required></div>
               <div class="form-field"><label for="student-course">Applying for course</label><input id="student-course" name="Applying for course" type="text"></div>
               <div class="form-field"><label for="student-session">Session</label><input id="student-session" name="Session" type="text" placeholder="Summer, Fall, Spring"></div>
-              <div class="form-field"><label for="student-email">Email ID <span class="required-mark">*</span></label><input id="student-email" name="Email" type="email" required></div>
+              <div class="form-field"><label for="student-email">Email ID <span class="required-mark">*</span></label><input id="student-email" name="email" type="email" required></div>
               <div class="form-field full">
                 <label for="student-consultant">If consultant, then name of person</label>
                 <select id="student-consultant" name="Consultant" data-consultant-select data-other-target="student-consultant-other">
@@ -101,7 +106,7 @@
               <div class="form-field full"><label for="student-phone">Contact number</label><input id="student-phone" name="Contact number" type="tel"></div>
               <div class="form-field full"><label for="student-notes">Academic goals</label><textarea id="student-notes" name="Academic goals" placeholder="Tell us about your intended course, country preferences, current stage, or any constraints."></textarea></div>
             </div>
-            <p class="form-note">Submitting opens your email client with the entered details so you can send the inquiry directly to Edufinite.</p>
+            <p class="form-note">Submitting sends the inquiry directly to Edufinite and then redirects to a confirmation page.</p>
             <div class="button-row"><button class="button" type="submit">Send student inquiry</button><a class="button-secondary" href="contact.html">Back to contact</a></div>
           </form>
         </article>

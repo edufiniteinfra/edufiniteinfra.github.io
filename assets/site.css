@@ -1350,6 +1350,15 @@ details.faq-item summary::-webkit-details-marker {
   display: none;
 }
 
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .form-note {
   margin-top: 1rem;
   font-size: 0.92rem;
