@@ -55,3 +55,33 @@ document.querySelectorAll("[data-consultant-select]").forEach((select) => {
   syncOtherField();
   select.addEventListener("change", syncOtherField);
 });
+
+document.querySelectorAll("[data-payment-switch]").forEach((switcher) => {
+  const buttons = switcher.querySelectorAll("[data-payment-target]");
+  const panels = document.querySelectorAll("[data-payment-panel]");
+
+  if (!buttons.length || !panels.length) {
+    return;
+  }
+
+  const setActive = (targetId) => {
+    buttons.forEach((button) => {
+      const active = button.getAttribute("data-payment-target") === targetId;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-selected", String(active));
+    });
+
+    panels.forEach((panel) => {
+      const active = panel.id === targetId;
+      panel.classList.toggle("is-active", active);
+      panel.hidden = !active;
+    });
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => setActive(button.getAttribute("data-payment-target")));
+  });
+
+  const initialTarget = switcher.getAttribute("data-payment-default") || buttons[0].getAttribute("data-payment-target");
+  setActive(initialTarget);
+});
